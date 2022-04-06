@@ -1,2 +1,2 @@
-# Projet-cimeti-re
+# Projet-cimetiere
 Projet de base de données BUT1
