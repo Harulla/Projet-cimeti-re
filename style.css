@@ -32,12 +32,12 @@ h1{
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
- 
+    background:#C4C4C4;
 }
 
 .background img{
     height: 99vh;
-    width:100%
+    width:100%;
 }
 
 .opacity{
@@ -68,9 +68,10 @@ h1{
     text-align: center;
     font-family:'Arial';
     color:#634242;
-    
     font-size: 3vw;
 }
+
+
 
 .footer{
     width:100%;
@@ -145,19 +146,38 @@ input[type=submit]{
     line-height: 55px;
     text-align: center;
     font-family:'Arial';
-    color:#634242;
-    background-color: #9c9c9cd8;
+    background-color: #F3EED9;
     font-size: 50px;
-    width: 40vw;
+    width: 80vw;
+    height:70vh;
     padding:10px;
     margin: 0;
     position:absolute;
-    right:30vw;
-    top: 38vh;
+    right:10vw;
+    top: 18vh;
     display: flex;
     justify-content:space-around;
     align-items: center;
     flex-direction: column;
-    border: solid 2px rgb(81, 148, 103);
-    
+    border: solid 2px rgb(81, 148, 103); 
+}
+
+.EcranCentral h1{
+    text-align: center;
+    font-family:'Arial';
+    color:#634242;
+    font-size: 3vw;
+}
+
+table{
+    min-width: 90%;
+
+}
+
+table, th, td {
+    border-width:1px; 
+    border-style:solid; 
+    border-color:black;
+    border-collapse: collapse;
+    font-size: 4vh;
 }
