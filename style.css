@@ -19,12 +19,6 @@ h1{
     text-align: center;
     font-family:'Arial';
 }
-/*
-ul{
-   background-color: red;
-    width:fit-content
-    
-}*/
 
 
 .header{
@@ -234,22 +228,23 @@ table, th, td {
     font-size: 25px;
     position:absolute;
     right:0px;
+    height:100%;
     
 }
 
 .carre{
     height:100%;
-    border:1px red solid;
     padding-top: 20px;
 }
+
 
 .MenuPrincipal li {
     display: inline-block;
     position:relative;    
     background-color:var(--clr-fond);
     
+    
 }
-
 
 .MenuPrincipal ul li{
     display:inherit;
@@ -257,9 +252,10 @@ table, th, td {
 
 .MenuPrincipal li ul{
     position: absolute;
-    max-height: 0;
+    max-height: 100%;
     left: 0;
     right: 0;
+    top:5rem;
     display:none;
 }
 
@@ -267,21 +263,24 @@ table, th, td {
     z-index: 1000;
     display:block;
     max-height: 15em;
+    
   }
 
 .MenuPrincipal ul li:hover{
-    background:rgb(163, 14, 6);
-    
+    background:rgba(54, 75, 106, 0.9);  
 }
 
-.MenuPrincipal ul li a{
-    color:rgb(252, 245, 252)
-}
 
-  li>a {
+
+li>a {
     display:block;
     text-align: center;
     padding:3px 8px;
-    color:rgb(0, 0, 0);
+    color:rgb(252, 245, 252);
     text-decoration:none;	
+}
+
+
+.SousMenu li{
+    background:rgba(54, 75, 106, 0.8);
 }

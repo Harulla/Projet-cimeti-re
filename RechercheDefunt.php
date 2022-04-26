@@ -7,20 +7,9 @@
     </head>  
     
     <body>  
-        <div class="header">
-           
-            <ul class="MenuPrincipal">
-                <li class="carre"><a>Se connecter</a>
-                    <ul class="SousMenu">
-                        <li><a href="exercice11.html" target="_blank">Ex 11</a></li>
-                        <li><a href="exercice12A.html" target="_blank">Ex 12A</a></li>
-                        <li><a href="exercice12B.html" target="_blank">Ex 12B</a></li>
-                        <li><a href="exercice13.html" target="_blank">Ex 13</a></li>
-                    </ul>
-                </li>
-            </ul> 
-        <h1>Cimetière Pâquerette</h1> 
-        </div> 
+        <?php
+            include("header.php");
+        ?>
         <div class="background">|
             <div class="overlay">
             
