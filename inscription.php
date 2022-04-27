@@ -17,15 +17,11 @@
             $results = $cnx->query("SELECT COUNT(prenom_proprietaire) AS nombre FROM projetp2.proprietaire WHERE nom_proprietaire='$nom' AND prenom_proprietaire='$prenom';");
             echo "SELECT COUNT(prenom_proprietaire) AS nombre FROM projetp2.proprietaire WHERE nom_proprietaire='$nom' AND prenom_proprietaire='$prenom';";
             while( $ligne = $results->fetch(PDO::FETCH_OBJ) ) {
-                if(($ligne->nombre) >= 1){
-                    $_SESSION['prenom']=$prenom;
-                    $_SESSION['nom']=$nom;
-                    if ($nom=="Dabanks" && $prenom=="Malcom"){
-                        $_SESSION['role']=1;
-                    }else{
-                        $_SESSION['role']=0; 
-                    }
-                    header('location: accueil.php');
+                if(($ligne->nombre) == 0){
+                    $results2 = $cnx->query("INSERT INTO projetp2.proprietaire VALUES (default,'$nom','$prenom');");
+                    echo "INSERT INTO projetp2.proprietaire VALUES (default,'$nom','$prenom');";
+                    
+                    header('location: login.php');
                 }else{
                     header('location: login.php');
                 }
@@ -36,8 +32,6 @@
             header('location: login.php');
         }
     ?>
-
-
 
 </body>
 </html>

@@ -14,26 +14,34 @@
         <?php 
         if (isset($_SESSION['nom']) && isset($_SESSION['prenom'])){
             if ($_SESSION['role']==1){
-                $role="(Gestionnaire)";
+                echo '
+                    <ul class="MenuPrincipal">
+                        <li class="carre"><a href="login.php"> '.$_SESSION['nom']." ".$_SESSION['prenom'].'(Gestionnaire)</a>
+                            <ul class="SousMenu">
+                                <li><a>Concessions</a></li>
+                                <li><a>Personnes</a></li>
+                                <li><a href="deconnexion.php">Déconnexion</a></li>
+                            </ul>
+                        </li>
+                    </ul> ';
             }else{
-                $role="(Gestionnaire)";
+                echo '
+                    <ul class="MenuPrincipal">
+                        <li class="carre"><a href="login.php"> '.$_SESSION['nom']." ".$_SESSION['prenom'].'(Client)</a>
+                            <ul class="SousMenu">
+                                <li><a>Accéder à mes concessions</a></li>
+                                <li><a href="deconnexion.php">Déconnexion</a></li>
+                            </ul>
+                        </li>
+                    </ul> ';
             };
-            echo '
-            <ul class="MenuPrincipal">
-                <li class="carre"><a href="login.php"> '.$_SESSION['nom']." ".$_SESSION['prenom']." ".$role.'</a>
-                    <ul class="SousMenu">
-                        <li><a>Accéder à mes concessions</a></li>
-                        <li><a href="deconnexion.php">Déconnexion</a></li>
-                    </ul>
-                </li>
-            </ul> ';
+            
         }
         else{
             echo '
             <ul class="MenuPrincipal">
                 <li class="carre"><a href="login.php"> Se connecter </a>
                     <ul class="SousMenu">
-                        <li><a" target="_blank">Accéder à mes concessions</a></li>
                     </ul>
                 </li>
             </ul> ';

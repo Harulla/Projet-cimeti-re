@@ -14,17 +14,16 @@
 
         <div class="background">|
             <div class="overlay">
-                <h1> Identifiez-vous :</h1>
+                <h1> Entrez-vos informations :</h1>
                 <div class="PetitEcranCentral" >
-                    <form action="connexion.php" method="post">
-                        <label for="prenom">Prénom :</label><input type="text" name="prenom" />
+                    <form action="inscription.php" method="post">
+                        <label for="prenom">Votre Prénom :</label><input type="text" name="prenom" />
                         <br/>
-                        <label for="nom">Nom :</label><input type="text" name="nom" />
+                        <label for="nom">Votre Nom :</label><input type="text" name="nom" />
                         <br/>
                         <input type="reset" name="reset" value="Effacer" /> 
-                        <input type="submit" name="submit" value="Se connecter" />
+                        <input type="submit" name="submit" value="S'inscrire" />
                     </form>
-                    <p> Si vous n'avez pas de compte : <a href="ecranInscription.php"> Inscrivez-vous </a></p>
                 </div>
             </div>
         </div>

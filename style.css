@@ -44,14 +44,12 @@ h1{
     z-index: -1;
     display:flex;
     flex-direction: column;
-    border:3px solid pink;
 } 
 
 .overlay{
     width:100%;
     height:100%;
     background-color: #c4c4c47d;
-    border:3px solid blue;
     padding-top:5rem;
     display:flex;
     flex-direction: column;
@@ -196,10 +194,32 @@ input[type=submit]{
     justify-content:space-around;
     align-items: center;
     flex-direction: column;
-    border: solid 3px rgb(81, 148, 103); 
 }
 
 .EcranCentral h1{
+    text-align: center;
+    font-family:'Arial';
+    color:#634242;
+    font-size: 3vw;
+}
+
+.PetitEcranCentral{
+    line-height: 55px;
+    text-align: center;
+    font-family:'Arial';
+    background-color: #F3EED9;
+    font-size: 25px;
+    width: 80vw;
+    height:40vh;
+    padding:10px;
+    margin: 0;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: column;
+}
+
+.PetitEcranCentral h1{
     text-align: center;
     font-family:'Arial';
     color:#634242;
