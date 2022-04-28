@@ -23,8 +23,9 @@
                 <h1> Concessions :</h1>
                 
                 <div class="EcranCentral" >
+                <div class="scroll"> 
                     <table >
-                        <TR><th> ID </th><th> DateDébut </th><th> Durée </th><th> Emplacement</th></TR>
+                        <TR><th> ID </th><th> DateDébut </th><th> Durée </th><th> Emplacement</th> <th> Plus de détails </th></TR>
                         <?php
                             if (isset($_POST['id'])){
                                 $id = $_POST['id'];
@@ -33,11 +34,12 @@
                                 $results = $cnx->query("SELECT * FROM projetp2.concession;");
                             }
                             while( $ligne = $results->fetch(PDO::FETCH_OBJ) ) {
-                                echo "<tr><td>$ligne->idconcession</td><td>$ligne->date_debut</td><td>$ligne->duree_concession</td><td> N°$ligne->numemplacement</td></tr>";
+                                echo "<tr><td>$ligne->idconcession</td><td>$ligne->date_debut</td><td>$ligne->duree_concession</td><td> N°$ligne->numemplacement</td> <td><a href=\"concessionsDetails.php?id=$ligne->idconcession\"> <img class=\"PetitLogo\" src=\"more.png\"> </a></td></tr> ";
                             }
                         ?>
                         
                     </table> 
+                    </div>
                 </div>
                 <form action="concessions.php" method="post">
                         <label for="id">Id :</label><input type="text" name="id" />

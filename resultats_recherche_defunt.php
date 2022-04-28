@@ -44,9 +44,9 @@
                             WHERE t.allee LIKE '$allee' 
                             AND o.nom_occupant LIKE '$nom' 
                             AND o.prenom_occupant LIKE '$prenom' 
+                            AND occ.DateArrivee = 
                             (select Selection.DateArrivee from projetp2.occuper Selection where (Selection.num_occupant = occ.num_occupant) ORDER BY Selection.DateArrivee DESC LIMIT 1)
                             ORDER BY o.nom_occupant;");
-
 
                             while( $ligne = $results->fetch(PDO::FETCH_OBJ) ) {
                                 echo "<tr><td>$ligne->nom_occupant</td><td>$ligne->prenom_occupant</td><td>$ligne->allee</td><td> N°$ligne->numemplacement</td></tr>";
