@@ -19,7 +19,7 @@
                         <li class="carre"><a href="login.php"> '.$_SESSION['nom']." ".$_SESSION['prenom'].'(Gestionnaire)</a>
                             <ul class="SousMenu">
                                 <li><a href="concessions.php">Concessions</a></li>
-                                <li><a>Personnes</a></li>
+                                <li><a href="personnes.php">Personnes</a></li>
                                 <li><a href="deconnexion.php">Déconnexion</a></li>
                             </ul>
                         </li>
