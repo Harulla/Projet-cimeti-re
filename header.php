@@ -29,7 +29,7 @@
                     <ul class="MenuPrincipal">
                         <li class="carre"><a href="login.php"> '.$_SESSION['nom']." ".$_SESSION['prenom'].'(Client)</a>
                             <ul class="SousMenu">
-                                <li><a>Accéder à mes concessions</a></li>
+                                <li><a href="vos_concession.php">Accéder à mes concessions</a></li>
                                 <li><a href="deconnexion.php">Déconnexion</a></li>
                             </ul>
                         </li>
