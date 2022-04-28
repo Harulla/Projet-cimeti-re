@@ -41,31 +41,12 @@
                             $results = $cnx->query("SELECT DISTINCT o.nom_occupant, o.prenom_occupant, o.num_occupant, t.allee, t.numemplacement FROM projetp2.occuper occ 
                             JOIN projetp2.occupant o ON o.num_occupant =  occ.num_occupant 
                             JOIN projetp2.tombe t ON t.numemplacement = occ.numemplacement 
-<<<<<<< Updated upstream
-                            WHERE t.allee LIKE '%Allee%' 
-                            AND o.nom_occupant LIKE '%%' 
-                            AND o.prenom_occupant LIKE '%obin%' 
-                            AND occ.dateArrivee = (select Selection.DateArrivee from projetp2.occuper Selection where (Selection.num_occupant = occ.num_occupant) ORDER BY Selection.DateArrivee DESC LIMIT 1)
-                            ORDER BY o.nom_occupant;");
-
-                            echo "SELECT DISTINCT o.nom_occupant, o.prenom_occupant, o.num_occupant, t.allee, t.numemplacement FROM projetp2.occuper occ 
-                            JOIN projetp2.occupant o ON o.num_occupant =  occ.num_occupant 
-                            JOIN projetp2.tombe t ON t.numemplacement = occ.numemplacement 
-                            WHERE t.allee LIKE '%Allee%' 
-                            AND o.nom_occupant LIKE '%%' 
-                            AND o.prenom_occupant LIKE '%obin%' 
-                            AND occ.dateArrivee = 
-                            (select Selection.DateArrivee from occuper Selection where (Selection.num_occupant = occ.num_occupant) ORDER BY Selection.DateArrivee DESC LIMIT 1)
-                            ORDER BY o.nom_occupant;";
-=======
                             WHERE t.allee LIKE '$allee' 
                             AND o.nom_occupant LIKE '$nom' 
                             AND o.prenom_occupant LIKE '$prenom' 
-                            AND occ.dateArrivee = 
                             (select Selection.DateArrivee from projetp2.occuper Selection where (Selection.num_occupant = occ.num_occupant) ORDER BY Selection.DateArrivee DESC LIMIT 1)
                             ORDER BY o.nom_occupant;");
 
->>>>>>> Stashed changes
 
                             while( $ligne = $results->fetch(PDO::FETCH_OBJ) ) {
                                 echo "<tr><td>$ligne->nom_occupant</td><td>$ligne->prenom_occupant</td><td>$ligne->allee</td><td> N°$ligne->numemplacement</td></tr>";
