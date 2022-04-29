@@ -13,19 +13,26 @@
         if (isset($_POST['nom']) && isset($_POST['prenom'])){
             $nom = $_POST['nom'];
             $prenom = $_POST['prenom'];
-            $auth= 0;
+            $mdp = $_POST['mdp'];
+            $mdp = md5($mdp);
             $results = $cnx->query("SELECT COUNT(prenom_proprietaire) AS nombre FROM projetp2.proprietaire WHERE nom_proprietaire='$nom' AND prenom_proprietaire='$prenom';");
-            echo "SELECT COUNT(prenom_proprietaire) AS nombre FROM projetp2.proprietaire WHERE nom_proprietaire='$nom' AND prenom_proprietaire='$prenom';";
+            //echo "SELECT COUNT(prenom_proprietaire) AS nombre FROM projetp2.proprietaire WHERE nom_proprietaire='$nom' AND prenom_proprietaire='$prenom';";
             while( $ligne = $results->fetch(PDO::FETCH_OBJ) ) {
                 if(($ligne->nombre) == 0){
-                    $results2 = $cnx->query("INSERT INTO projetp2.proprietaire VALUES (default,'$nom','$prenom');");
-                    echo "INSERT INTO projetp2.proprietaire VALUES (default,'$nom','$prenom');";
-                    
+                    $req2 = "INSERT INTO projetp2.proprietaire VALUES (default,'$nom','$prenom') RETURNING id_proprietaire ;";
+                    //echo "$req2 <br/>";
+                    if($results2 = $cnx -> query($req2)){
+                        $id_pro = ($results2->fetch(PDO::FETCH_OBJ))->id_proprietaire;
+                        //echo "$id_pro <br/>";
+                        
+                        $req3 = "INSERT INTO projetp2.authentification VALUES('$id_pro','$mdp');";
+                        $cnx -> query($req3);
+                        //echo "<br/>$req3";
                     header('location: login.php');
+                    }   
                 }else{
                     header('location: login.php');
-                }
-                
+                }            
                 
             }
         }else{

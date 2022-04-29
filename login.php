@@ -21,6 +21,8 @@
                         <br/>
                         <label for="nom">Nom :</label><input type="text" name="nom" />
                         <br/>
+                        <label for="mdp">Mot de passe: :</label><input type="password" name="mdp" />
+                        <br/>
                         <input type="reset" name="reset" value="Effacer" /> 
                         <input type="submit" name="submit" value="Se connecter" />
                     </form>
