@@ -49,11 +49,13 @@
                         }
                     ?>
                     </table> 
-                    <form action="resultats_recherche_defunt.php" method="GET">
+                    <?php
+                    echo '<form action="concessions_traitement.php?id='.$id.'" method="POST">';
+                    ?>
                             <input type="text" name="nom" size="20" placeholder="Nom :"/>
                             <input type="text" name="prenom" size="20" placeholder="Prénom :"/>
-                            <input type="submit" name="previsualiser" value="Ajouter un héritier" />
-                            <input type="submit" name="envoyer" value="Ajouter un occupant" />
+                            <input type="submit" name="heritier" value="Ajouter un héritier" />
+                            <input type="submit" name="occupant" value="Ajouter un occupant autorisé" />
                         </form>
                 </div>
                 </div>
