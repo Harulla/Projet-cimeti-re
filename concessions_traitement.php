@@ -72,7 +72,7 @@
                         }
                      
                     }
-                    //header("location: concessionsDetails.php?id=$id");
+                    header("location: concessionsDetails.php?id=$id");
                 ?>
 
 
