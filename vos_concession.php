@@ -10,6 +10,9 @@
     <?php
         include("connexion.inc.php");
         include("header.php");
+        if(isset($_SESSION['id_proprietaire'])){
+            $id_prop= $_SESSION['id_proprietaire'];
+        }
     ?>
 
         <div class="background">|
@@ -22,10 +25,10 @@
                         <TR><th> ID </th><th> DateDébut </th><th> Durée </th><th> Emplacement</th> <th> Plus de détails </th></TR>
                         <?php
                             
-                            $results = $cnx->query("SELECT c.idconcession, c.date_debut, c.duree_concession, c.numemplacement FROM projep2.concession c JOIN projetp2.est_proprietaire estprop ON estprop.idconcession = c.idconcession JOIN projetp2.proprietaire p ON p.id_proprietaire = estprop.id_proprietaire WHERE  p.id_proprietaire = 2;");
+                            $results = $cnx->query("SELECT c.idconcession, c.date_debut, c.duree_concession, c.numemplacement FROM projetp2.concession c JOIN projetp2.est_proprietaire estprop ON estprop.idconcession = c.idconcession JOIN projetp2.proprietaire p ON p.id_proprietaire = estprop.id_proprietaire WHERE  p.id_proprietaire = $id_prop;");
                             
                             while( $ligne = $results->fetch(PDO::FETCH_OBJ) ) {
-                                echo "<tr><td>$ligne->idconcession</td><td>$ligne->date_debut</td><td>$ligne->duree_concession</td><td> N°$ligne->numemplacement</td> <td><a href=\"concessionsDetails.php?id=$ligne->idconcession\"> <img class=\"PetitLogo\" src=\"more.png\"> </a></td></tr> ";
+                                echo "<tr><td>$ligne->idconcession</td><td>$ligne->date_debut</td><td>$ligne->duree_concession</td><td> N°$ligne->numemplacement</td> <td><a href=\"vos_concessions_details.php?id=$ligne->idconcession&amp;numEmp=$ligne->numemplacement\"> <img class=\"PetitLogo\" src=\"more.png\"> </a></td></tr> ";
                             }
                         ?>
                         
