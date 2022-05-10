@@ -47,7 +47,7 @@
             </ul> ';
         }
         ?>
-    <h1>Cimetière Pâquerette</h1> 
+    <a href="accueil.php"><h1>Cimetière Pâquerette</h1> </a>
     </div> 
     </body>  
 </html>
